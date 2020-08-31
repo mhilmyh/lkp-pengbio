@@ -24,12 +24,12 @@ asam amino
 """
 amino_data = {}
 
-"""
-Fungsi untuk mencari persentase asam amino
-"""
-
 
 def read_from_file(filename, result):
+    """
+    Fungsi untuk mencari persentase asam 
+    amino dari file yang diberikan
+    """
     with open(filename, "r") as file:
         """
         Ambil nama asam amino
@@ -78,3 +78,9 @@ for name in amino_data:
     for data in amino_data[name]:
         print(f"{amino_name[data]}: {amino_data[name][data]}")
     print()
+
+"""
+Referensi:
+[-] https://www.rcsb.org/
+[-] http://www.fao.org/3/y2775e/y2775e0e.htm
+"""
