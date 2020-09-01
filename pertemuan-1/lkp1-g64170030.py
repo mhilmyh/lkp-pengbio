@@ -41,13 +41,14 @@ def read_from_file(filename, result):
         hitung persentase tiap karakter
         """
         sequence = [char for char in file.readline().rstrip("\r\n")]
+        print(f"Fragment Asam Amino {name}: {','.join(sequence)}")
         percentage = {}
         for char in set(sequence):
             percentage[char] = 0
         for char in sequence:
             percentage[char] += 1
         for char in set(sequence):
-            percentage[char] /= len(sequence)
+            percentage[char] = round(percentage[char] / len(sequence), 3)
 
         """
         Simpan hasil pada variabel
@@ -76,7 +77,7 @@ Menampilkan hasil
 for name in amino_data:
     print(f"Kode: {name}")
     for data in amino_data[name]:
-        print(f"{amino_name[data]}: {amino_data[name][data]}")
+        print(f"{amino_name[data]}({data}): {amino_data[name][data] * 100}%")
     print()
 
 """
