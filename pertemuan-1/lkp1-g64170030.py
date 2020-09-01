@@ -57,17 +57,17 @@ def read_from_file(filename, result):
 
 
 """
-Mencari persentasi asam amino 3W6A
+Mencari persentase asam amino 3W6A
 """
 read_from_file("rcsb_pdb_3W6A.fasta", amino_data)
 
 """
-Mencari persentasi asam amino 3BEQ
+Mencari persentase asam amino 3BEQ
 """
 read_from_file("rcsb_pdb_3BEQ.fasta", amino_data)
 
 """
-Mencari persentasi asam amino 2LW7
+Mencari persentase asam amino 2LW7
 """
 read_from_file("rcsb_pdb_2LW7.fasta", amino_data)
 
