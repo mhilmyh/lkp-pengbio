@@ -3,6 +3,7 @@
 ---
 Nama : Muhamad Hilmy Haidar
 NIM : G64170030
+Link : [https://github.com/mhilmyh/lkp-pengbio/blob/master/pertemuan-2/lkp2.md](https://github.com/mhilmyh/lkp-pengbio/blob/master/pertemuan-2/lkp2.md)
 
 ---
 
