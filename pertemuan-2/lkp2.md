@@ -33,7 +33,7 @@ Pada alamat website [`http://rdp.cme.msu.edu/classifier/classifier.jsp`](http://
     &nbsp;
     
     <div align="center">
-    <img src="./rdp-classifier-website.png" width="600"></img>
+    <img src="./rdp-classifier-website.png"></img>
     </div>
     
     &nbsp;
@@ -49,8 +49,10 @@ Pada alamat website [`http://rdp.cme.msu.edu/classifier/classifier.jsp`](http://
     &nbsp;
 
     <div align="center">
-    <img src="./rdp-classifier-paste.png" width="600"></img>
+    <img src="./rdp-classifier-paste.png"></img>
     </div>
+
+    &nbsp;
 
     >  Kita juga bisa memilih training set yang dijadikan sebagai acuan untuk klasifikasi dan menggunakan file format selain fasta (yaitu GenBank atau EMBL).
 
@@ -60,7 +62,7 @@ Pada alamat website [`http://rdp.cme.msu.edu/classifier/classifier.jsp`](http://
     &nbsp;
 
     <div align="center">
-    <img src="./rdp-classifier-klasifikasi.png" width="600"></img>
+    <img src="./rdp-classifier-klasifikasi.png"></img>
     </div>
 
     &nbsp;
@@ -70,10 +72,16 @@ Pada alamat website [`http://rdp.cme.msu.edu/classifier/classifier.jsp`](http://
     &nbsp;
 
     <div align="center">
-    <img src="./rdp-classifier-result.png" width="600"></img>
+    <img src="./rdp-classifier-result.png"></img>
     </div>
 
     &nbsp;
+
+    Hasil yang diperoleh berbentuk pohon (*tree*).Dimulai dari domain yang berhasil diidentifikasi dari data dan training set. Lalu terdapat juga klasifikasi filum, genus, kelas, dll yang ditampilkan berurutan.
+
+    &nbsp;
+
+    > Kita dapat mengatur kedalaman dari pohon yang dihasilkan, tingkat *confidence* maupun mengatur jumlah bobot per-*gene* untuk hasil yang lebih baik terhadap *parent root* dari tiap data.
 
 ### Pemanfaatan
 
