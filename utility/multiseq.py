@@ -62,9 +62,16 @@ if __name__ == "__main__":
 
     [result, comb, sum_col] = build_result_matrix(seqs, match, mismatch, gap)
     
-    headers = ["no"] + comb + ["jumlah"]
+    headers = ["No"] + comb + ["Jumlah"]
     table = tabulate(result, headers, tablefmt="fancy_grid")
+
     print()
+    separator(len(comb))
+    
+    print("Matrix nilai : ", end="\n\n")
     print(table)
+    
     print(f"==> Jumlah Total : {sum_col.sum()}", end="\n\n\n")
+    separator(len(comb))
+    print()
 
