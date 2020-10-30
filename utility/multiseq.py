@@ -18,6 +18,8 @@ def separator(cnt: int = 1):
     print("="* 14 * cnt, end="\n\n")
 
 if __name__ == "__main__":
-  with open("pairwise.txt", "r") as f:
-
+  with open("multiseq.txt", "r") as f:
+    lines = [line.strip() for line in f.readlines() if line.strip()]
+    [match, mismatch, gap] = lines.pop(0).split(',')
+    
 
