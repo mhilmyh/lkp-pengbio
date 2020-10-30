@@ -61,8 +61,8 @@ if __name__ == "__main__":
         separator(len(mtx[0]))
         print("Matrix nilai : ", end="\n\n")
 
-        headers = np.arange(1, len(mtx[0]) + 1)
-        numbering = np.arange(1, len(mtx) + 1)
+        headers =  [""] + [x for x in X]
+        numbering =  [""] + [y for y in Y]
         result = np.column_stack((numbering, mtx))
         table = tabulate(result, headers, tablefmt="fancy_grid")
         print(table)
