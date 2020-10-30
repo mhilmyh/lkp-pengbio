@@ -1,9 +1,21 @@
+"""
+Pairwise Alignment
+---
+
+Code untuk membantu menyelesaikan soal 
+pairwise alignment versi Needleman-Wunsch
+"""
+import os
+from pathlib import Path
+
+os.chdir(Path(__file__).parent.absolute())
+
 import code
 from Bio import pairwise2
 from Bio.pairwise2 import format_alignment
 
-def separator():
-    print("="*32, end="\n\n")
+def separator(cnt: int = 1):
+    print("="* 14 * cnt, end="\n\n")
 
 def matrix(s1, s2, match, mismatch, gap):
     seq1 = "x" + s1
@@ -29,30 +41,31 @@ def matrix(s1, s2, match, mismatch, gap):
                 )
 
     # print matrix
-    print(
-        '\n'.join([
-            '\t'.join([str(cell) for cell in row]) 
-            for row in result
-        ])
-    )
+    return result
 
 if __name__ == "__main__":
-    separator()
-    
-    X = input("sequence 1: ")
-    Y = input("sequence 2: ")
-    match = int(input("match: "))
-    mismatch = int(input("mismatch: "))
-    gap = int(input("gap: "))
-    
-    separator()
+    with open("pairwise.txt", "r") as f:
 
-    matrix(X,Y,match,mismatch,gap)
+        lines = [line.strip() for line in f.readlines() if line.strip()]
+        [match, mismatch, gap] = lines.pop(0).split(',')
+        [X, Y] = lines
 
-    separator()
+        match = int(match)
+        mismatch = int(mismatch)
+        gap = int(gap)
+        
+        result = matrix(X,Y,match,mismatch,gap)
+        separator(len(result[0]))
+        print(
+            '\n\n'.join([
+                '\t|\t'.join([str(cell) for cell in row]) 
+                for row in result
+            ])
+        )
+        separator(len(result[0]))
 
-    alignments = pairwise2.align.globalms(X, Y, match, mismatch, gap, gap)
+        alignments = pairwise2.align.globalms(X, Y, match, mismatch, gap, gap)
 
-    # print 5 best pair
-    for i in range(min(5, len(alignments))):
-        print(format_alignment(*alignments[i]))
+        # print 10 best pair if possible
+        for i in range(min(10, len(alignments))):
+            print(format_alignment(*alignments[i]))
