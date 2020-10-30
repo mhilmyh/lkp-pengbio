@@ -65,8 +65,7 @@ if __name__ == "__main__":
         numbering =  [""] + [y for y in Y]
         result = np.column_stack((numbering, mtx))
         table = tabulate(result, headers, tablefmt="fancy_grid")
-        print(table)
-        
+        print(table, end="\n\n")
         separator(len(mtx[0]))
         print()
         print("Hasil pairwise alignment : ", end="\n\n")
