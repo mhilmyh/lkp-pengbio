@@ -5,19 +5,20 @@ Pairwise Alignment
 Code untuk membantu menyelesaikan soal 
 pairwise alignment versi Needleman-Wunsch
 """
+from tabulate import tabulate
+from Bio.pairwise2 import format_alignment
+from Bio import pairwise2
+import numpy as np
+import code
 import os
 from pathlib import Path
 
 os.chdir(Path(__file__).parent.absolute())
 
-import code
-import numpy as np
-from Bio import pairwise2
-from Bio.pairwise2 import format_alignment
-from tabulate import tabulate
 
 def separator(cnt: int = 1):
-    print("="* 14 * cnt, end="\n\n")
+    print("=" * 14 * cnt, end="\n\n")
+
 
 def matrix(s1, s2, match, mismatch, gap):
     seq1 = "x" + s1
@@ -45,6 +46,7 @@ def matrix(s1, s2, match, mismatch, gap):
     # print matrix
     return mtx
 
+
 if __name__ == "__main__":
     with open("pairwise.txt", "r") as f:
 
@@ -55,14 +57,15 @@ if __name__ == "__main__":
         match = int(match, 10)
         mismatch = int(mismatch, 10)
         gap = int(gap, 10)
-        
-        mtx = matrix(X,Y,match,mismatch,gap)
+
+        mtx = matrix(X, Y, match, mismatch, gap)
         print()
         separator(len(mtx[0]))
         print("Matrix nilai : ", end="\n\n")
 
-        headers =  [""] + [x for x in X]
-        numbering =  [""] + [y for y in Y]
+        headers = [""] + [x for x in X]
+        numbering = [""] + [y for y in Y]
+        mtx = np.transpose(mtx)
         result = np.column_stack((numbering, mtx))
         table = tabulate(result, headers, tablefmt="fancy_grid")
         print(table, end="\n\n")

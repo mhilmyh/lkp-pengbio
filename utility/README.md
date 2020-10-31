@@ -38,10 +38,10 @@ _multiseq.txt_ :
 
 ```
 {match},{mismatch},{gap}
-{sequence ke 1}
-{sequence ke 2}
+{pivot sequence ke 1}
+{pivot sequence ke 2}
 ...
-{sequence ke n}
+{pivot sequence ke n}
 ```
 
 ```python
@@ -51,6 +51,8 @@ python3 multiseq.py
 # untuk python 2
 python pairwise.py
 ```
+
+Jika ingin menggunakan sequence yg awal dan mencari alignment dari beberapa sequence, gunakan `multialign.py` karena multiseq digunakan untuk mengenerate hasil dari `multialign.py`.
 
 ## Catatan Penting
 
